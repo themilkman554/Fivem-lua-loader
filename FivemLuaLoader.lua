@@ -17,6 +17,9 @@ else
 end
 local libPath = loaderPath .. "lib\\"
 
+-- Export libPath globally so lib files can access it
+FIVEM_LOADER_LIB_PATH = libPath
+
 -- Log paths for debugging
 Logger.LogInfo("[FiveM Loader] loaderPath: " .. loaderPath)
 Logger.LogInfo("[FiveM Loader] libPath: " .. libPath)

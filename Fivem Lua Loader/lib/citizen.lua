@@ -159,8 +159,8 @@ local JhashToFunction = {}
 
 -- Try to load jhash lookup tables
 local function loadJhashTables()
-    -- Get the lib path from the loader
-    local libPath = (FIVEM_LOADER_BASE_PATH or (FileMgr.GetMenuRootPath() .. "\\Lua\\Fivem lua loader\\")) .. "Fivem Lua Loader\\lib\\"
+    -- Get the lib path - use global set by main loader, or construct from Lua folder
+    local libPath = FIVEM_LOADER_LIB_PATH or (FileMgr.GetMenuRootPath() .. "\\Lua\\Fivem Lua Loader\\lib\\")
     
     -- Load native hash mappings (from natives.json)
     local jhashOk, jhashTable = pcall(dofile, libPath .. "jhash_natives.lua")
